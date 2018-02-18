@@ -137,6 +137,7 @@ class Sidebar extends Component {
             </RsNavLink>
           ) : (
             <NavLink
+              exact={true}
               to={url}
               className={classes.link}
               activeClassName="active"

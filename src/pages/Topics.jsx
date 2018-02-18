@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table } from "reactstrap";
+import { Card, CardBody, CardHeader, Table } from "reactstrap";
 
 class Topics extends Component {
   constructor(props) {
@@ -14,30 +14,31 @@ class Topics extends Component {
       .then(response => response.json())
       .then(data => {
         const topics = data.map(e => ({ name: e }));
-        console.log(topics);
         this.setState({ topics });
       });
   }
 
   render() {
     return (
-      <div>
-        <h1>Topics</h1>
-        <Table striped>
-          <thead>
-            <tr>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.topics.map(topic => (
+      <Card>
+        <CardHeader>Topics</CardHeader>
+        <CardBody>
+          <Table striped>
+            <thead>
               <tr>
-                <td>{topic.name}</td>
+                <th>Name</th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
-      </div>
+            </thead>
+            <tbody>
+              {this.state.topics.map(topic => (
+                <tr key={topic.name}>
+                  <td>{topic.name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </CardBody>
+      </Card>
     );
   }
 }

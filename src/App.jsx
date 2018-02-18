@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { Container } from "reactstrap";
 import Header from "./layout/Header";
+import Breadcrumb from "./layout/Breadcrumb";
 import Sidebar from "./layout/Sidebar";
 import Aside from "./layout/Aside";
 import Footer from "./layout/Footer";
@@ -19,8 +20,9 @@ class App extends Component {
             <Sidebar />
             <main className="main">
               <Container fluid>
+                <Breadcrumb />
                 <Route exact path="/" name="Home" component={Home} />
-                <Route path="/topics" name="Topics" component={Topics} />
+                <Route exact path="/topics" name="Topics" component={Topics} />
               </Container>
             </main>
             <Aside />
