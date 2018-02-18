@@ -9,11 +9,4 @@ import "../scss/core/_dropdown-menu-right.scss";
 // Containers
 import App from "./App";
 
-ReactDOM.render(
-  <HashRouter>
-    <Switch>
-      <Route path="/" name="Home" component={App} />
-    </Switch>
-  </HashRouter>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
