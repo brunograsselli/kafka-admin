@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 
+import DocumentTitle from "../components/DocumentTitle";
+
 class Home extends Component {
   render() {
-    return <div>Welcome to Kafka Admin!</div>;
+    return (
+      <DocumentTitle title="Home">
+        <div>Welcome to Kafka Admin!</div>
+      </DocumentTitle>
+    );
   }
 }
 

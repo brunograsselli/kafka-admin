@@ -1,5 +1,6 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
+import { withRouter } from 'react-router';
 import {Breadcrumb, BreadcrumbItem} from 'reactstrap';
 
 const routes = {
@@ -9,7 +10,7 @@ const routes = {
 
 const findRouteName = url => routes[url];
 
-const getPaths = (pathname) => {
+const getPaths = pathname => {
   const paths = ['/'];
 
   if (pathname === '/') return paths;
@@ -44,16 +45,11 @@ const BreadcrumbsItem = ({...rest, match}) => {
 
 const Breadcrumbs = ({...rest, location : {pathname}, match}) => {
   const paths = getPaths(pathname);
-  const items = paths.map((path, i) => <Route key={i++} path={path} component={BreadcrumbsItem}/>);
   return (
     <Breadcrumb>
-      {items}
+      {paths.map((path, i) => <Route key={i++} path={path} component={BreadcrumbsItem}/>)}
     </Breadcrumb>
   );
 };
 
-export default props => (
-  <div>
-    <Route exact={true} path="/:path" component={Breadcrumbs} {...props} />
-  </div>
-);
+export default withRouter(Breadcrumbs);

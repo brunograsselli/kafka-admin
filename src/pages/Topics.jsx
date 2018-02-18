@@ -3,6 +3,8 @@ import { Card, CardBody, CardHeader, Table } from "reactstrap";
 
 import KafkaRest from "../services/KafkaRest";
 
+import DocumentTitle from "../components/DocumentTitle";
+
 class Topics extends Component {
   constructor(props) {
     super(props);
@@ -20,25 +22,26 @@ class Topics extends Component {
 
   render() {
     return (
-      <Card>
-        <CardHeader>Topics</CardHeader>
-        <CardBody>
-          <Table striped>
-            <thead>
-              <tr>
-                <th>Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.topics.map(topic => (
-                <tr key={topic.name}>
-                  <td>{topic.name}</td>
+      <DocumentTitle title="Topics">
+        <Card>
+          <CardBody>
+            <Table striped>
+              <thead>
+                <tr>
+                  <th>Name</th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
-        </CardBody>
-      </Card>
+              </thead>
+              <tbody>
+                {this.state.topics.map(topic => (
+                  <tr key={topic.name}>
+                    <td>{topic.name}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </CardBody>
+        </Card>
+      </DocumentTitle>
     );
   }
 }
