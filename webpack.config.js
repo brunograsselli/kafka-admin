@@ -19,12 +19,14 @@ module.exports = (env = {}) => {
       path: BUILD_DIR,
       filename: "[name].bundle.js"
     },
+    resolve: {
+      extensions: [".js", ".jsx"]
+    },
     devtool: env.prod ? "source-map" : "cheap-module-eval-source-map",
     devServer: {
       contentBase: BUILD_DIR,
       compress: true,
-      hot: true,
-      open: true
+      hot: true
     },
     module: {
       rules: [
