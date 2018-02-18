@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Card, CardBody, CardHeader, Table } from "reactstrap";
 
+import KafkaRest from "../services/KafkaRest";
+
 class Topics extends Component {
   constructor(props) {
     super(props);
@@ -10,12 +12,10 @@ class Topics extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8082/topics")
-      .then(response => response.json())
-      .then(data => {
-        const topics = data.map(e => ({ name: e }));
-        this.setState({ topics });
-      });
+    KafkaRest.topics().then(data => {
+      const topics = data.map(e => ({ name: e }));
+      this.setState({ topics });
+    });
   }
 
   render() {
