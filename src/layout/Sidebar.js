@@ -7,7 +7,12 @@ const items = [
   {
     name: "Home",
     url: "/",
-    icon: "icon-home"
+    icon: "fa fa-home"
+  },
+  {
+    name: "Topics",
+    url: "/topics",
+    icon: "fa fa-database"
   }
 ];
 
