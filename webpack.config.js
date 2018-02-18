@@ -35,11 +35,7 @@ module.exports = (env = {}) => {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader",
-            options: {
-              cacheDirectory: true,
-              presets: ["react", "env"]
-            }
+            loader: "babel-loader"
           }
         },
         {

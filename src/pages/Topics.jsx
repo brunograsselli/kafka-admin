@@ -20,12 +20,16 @@ class Topics extends Component {
     });
   }
 
+  handleOnClick = topic => {
+    KafkaRest.topic(topic).then(data => console.log(data));
+  };
+
   render() {
     return (
       <DocumentTitle title="Topics">
         <Card>
           <CardBody>
-            <Table striped>
+            <Table hover>
               <thead>
                 <tr>
                   <th>Name</th>
@@ -33,7 +37,10 @@ class Topics extends Component {
               </thead>
               <tbody>
                 {this.state.topics.map(topic => (
-                  <tr key={topic.name}>
+                  <tr
+                    key={topic.name}
+                    onClick={() => this.handleOnClick(topic.name)}
+                  >
                     <td>{topic.name}</td>
                   </tr>
                 ))}
