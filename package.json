@@ -1,6 +1,6 @@
 {
   "name": "kafka-admin",
-  "version": "0.0.01",
+  "version": "0.0.1",
   "description": "Kafka admin UI",
   "author": "lucapette",
   "homepage": "https://lucapette.me",
@@ -38,13 +38,16 @@
     "react-chartjs-2": "2.7.0",
     "react-document-title": "^2.0.3",
     "react-dom": "16.2.0",
+    "react-redux": "^5.0.7",
     "react-router-dom": "4.2.2",
     "react-transition-group": "2.2.1",
     "reactstrap": "5.0.0-beta",
+    "redux": "^3.7.2",
     "simple-line-icons": "2.4.1"
   },
   "scripts": {
-    "stats": "webpack -d --progress --watch --profile --json > compilation-stats.json --env.dev",
+    "stats":
+      "webpack -d --progress --watch --profile --json > compilation-stats.json --env.dev",
     "start": "webpack-dev-server --progress --color --inline --env.dev",
     "build": "webpack -p --progress --env.prod"
   },

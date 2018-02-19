@@ -9,6 +9,7 @@ import Footer from "./layout/Footer";
 
 import Home from "./pages/Home";
 import Topics from "./pages/Topics";
+import TopicDetails from "./pages/Topics/TopicDetails";
 
 class App extends Component {
   render() {
@@ -23,6 +24,12 @@ class App extends Component {
                 <Breadcrumb />
                 <Route exact path="/" name="Home" component={Home} />
                 <Route exact path="/topics" name="Topics" component={Topics} />
+                <Route
+                  exact
+                  path="/topics/:name"
+                  name="Topic Details"
+                  component={TopicDetails}
+                />
               </Container>
             </main>
             <Aside />
